@@ -1,0 +1,34 @@
+# aqua custom registry for Helium.
+#
+# ⚠️ IMPORTANT: mise's aqua backend does NOT support `format: dmg`.
+# mise reimplements aqua in Rust and its ExtractionFormat enum has no dmg
+# variant (only zip/7z/rar/tar.*/gz/xz/bz2/zst/raw), so a DMG asset is treated
+# as `raw` and never mounted. This registry therefore only works with the
+# upstream aqua CLI (Go, >= v2.2.0), NOT `mise use aqua:...`.
+#
+# Even with aqua-CLI, this installs the *contents* of the DMG into aqua's pkg
+# dir and exposes a binary on PATH — it does NOT install Helium.app into
+# /Applications. For a real GUI install use the Homebrew cask (Casks/helium.rb).
+#
+# Kept here for reference / future use if mise adds dmg support.
+packages:
+  - type: github_release
+    repo_owner: megalithic
+    repo_name: helium-macos-releases
+    description: Ungoogled Chromium (Helium), signed + notarized, with Widevine CDM
+    private: true
+    asset: "helium_{{trimV .Version}}_{{.Arch}}-macos.dmg"
+    format: dmg
+    supported_envs:
+      - darwin/arm64
+    files:
+      - name: Helium
+        src: Helium.app/Contents/MacOS/Helium
+    checksum:
+      type: github_release
+      asset: "helium_{{trimV .Version}}_{{.Arch}}-macos.dmg.sha256"
+      algorithm: sha256
+      file_format: regexp
+      pattern:
+        checksum: "^(\\b[A-Fa-f0-9]{64}\\b)"
+        file: "^\\b[A-Fa-f0-9]{64}\\b\\s+(\\S+)$"
