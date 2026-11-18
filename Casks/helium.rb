@@ -47,8 +47,8 @@ cask "helium" do
   # arm64-only build. To pin an older release: `brew install --cask helium --version=0.14.2.1`
   # is not supported for casks; instead bump `version`/`sha256` below or check out an
   # older tap commit. `version :latest` (see helium-latest.rb) tracks newest automatically.
-  version "0.14.2.1"
-  sha256 "d6b2c304c2dbabf2e06822eab5a6e6fc18945d6f7e99d5e652280e3b08e52e04"
+  version "0.21.1.1"
+  sha256 "5f76852caca4554db174b9874510556ac7dd8016f5a68ce09cb3da80b29d90ee"
 
   url "https://github.com/megalithic/helium-macos-releases/releases/download/#{version}/helium_#{version}_arm64-macos.dmg",
       using:    GitHubPrivateReleaseDownloadStrategy,

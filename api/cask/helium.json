@@ -5,9 +5,9 @@
   "name": ["Helium"],
   "desc": "Ungoogled Chromium (Helium), signed + notarized, with Widevine CDM",
   "homepage": "https://github.com/megalithic/helium-macos-releases",
-  "url": "https://github.com/megalithic/helium-macos-releases/releases/download/0.14.2.1/helium_0.14.2.1_arm64-macos.dmg",
-  "version": "0.14.2.1",
-  "sha256": "d6b2c304c2dbabf2e06822eab5a6e6fc18945d6f7e99d5e652280e3b08e52e04",
+  "url": "https://github.com/megalithic/helium-macos-releases/releases/download/0.21.1.1/helium_0.21.1.1_arm64-macos.dmg",
+  "version": "0.21.1.1",
+  "sha256": "5f76852caca4554db174b9874510556ac7dd8016f5a68ce09cb3da80b29d90ee",
   "artifacts": [
     { "app": ["Helium.app"], "target": "/Applications/Helium.app" },
     { "zap": [ { "trash": [
